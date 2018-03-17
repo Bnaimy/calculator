@@ -1,0 +1,46 @@
+#!/bin/bash
+ 
+ 
+function cos()
+{
+     
+    cos()=$($1)
+    echo " cos() est = $cos"
+     
+    return 1;
+}
+ 
+function sin()
+{
+     
+    soustraction=$($1)
+    echo "sin()= $sin"
+     
+    return 1;
+}
+function sqrt()
+{
+     
+     
+    sqrt=$($1)
+    echo "square est = $sqrt"
+     
+    return 1;
+}
+ 
+for ((i=1;i<=$#;i++)) do
+{
+     
+     
+    if   test ${!i} = "cos()"
+    then
+            cos($1) 
+    elif  test ${!i} = "sin()"
+    then
+            sin($1)
+    elif  test ${!i} = "sqrt"
+    then
+          sqrt($1)
+    fi
+}
+done
