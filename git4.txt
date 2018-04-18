@@ -1,0 +1,10 @@
+#!/bin/bash 
+ 
+unset convert  
+echo  "Entrez la valeur" 
+read -r i  
+for (( cpt=8 ; $cpt > 1  ; cpt-- )); do  
+        let convert[$cpt]="$i & 1"  
+        let i="i >>= 1"    
+done  
+echo "${convert[@]}"
