@@ -1,0 +1,25 @@
+#!/bin/bash 
+ 
+if [ "$#" -eq 0 ]; then 
+    echo "enter nombre " 
+    read -r val 
+else 
+    val=$1 
+fi 
+    if [ "$val" -lt 0 ]; then 
+    let val=-1*$val 
+    fi 
+ 
+    resultat=1 
+    val2="$val"
+ 
+while [ "$val" -ne 0 ]; do 
+    printf "$val " 
+    let resultat=$resultat*$val 
+    let val=$val-1 
+    if [ "$val" -ne 0 ]; then 
+        printf "* " 
+    fi 
+done 
+ 
+echo "= $resultat"
